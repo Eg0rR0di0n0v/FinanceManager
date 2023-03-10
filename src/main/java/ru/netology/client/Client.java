@@ -7,13 +7,12 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Scanner;
 public class Client {
     public static void main(String... args) {
         while (true) {
             try (Socket clientSocket = new Socket("localhost", 8989);
                  PrintWriter writerSocket = new PrintWriter(clientSocket.getOutputStream(), true);
-                 BufferedReader readerSocket = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));) {
+                 BufferedReader readerSocket = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) {
 
                 BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
